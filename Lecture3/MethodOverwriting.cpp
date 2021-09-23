@@ -34,7 +34,11 @@ void push(int el){
 int pop(){
 return Stack::pop();
 }
+int peek();
 };
+int Stack2::peek(){
+    return this->st[this->top];
+}
 int main(int argc, char const *argv[])
 {
     
