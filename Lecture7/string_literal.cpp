@@ -1,4 +1,8 @@
 #include<bits/stdc++.h>
+//#include<ext/pb_ds/assoc_container.hpp>
+//#include<ext/pb_ds/tree_policy.hpp>
+//#include <ext/pb_ds/trie_policy.hpp>
+//using namespace __gnu_pbds;
 #define ll 				long long int
 #define ld				long double
 #define mod             1000000007
@@ -26,46 +30,39 @@
 template <typename T> T gcd(T a, T b){if(a%b) return gcd(b,a%b);return b;}
 template <typename T> T lcm(T a, T b){return (a*(b/gcd(a,b)));}
 vs tokenizer(std::string str,char ch) {std::istringstream var((str)); vs v; std::string t; while(std::getline((var), t, (ch))) {v.pb(t);} return v;}
+
+
 void err(std::istream_iterator<std::string> it) {}
 template<typename T, typename... Args>
 void err(std::istream_iterator<std::string> it, T a, Args... args) {
     std::cout << *it << " = " << a << std::endl;
     err(++it, args...);
 }
-void file_i_o()
-{
-    std::ios_base::sync_with_stdio(0); 
-    std::cin.tie(0); 
-    std::cout.tie(0);
-    #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif
-}
-
 int main(int argc, char const *argv[]) {
     clock_t begin = clock();
-    file_i_o();
-    // Write your code here....
-    std::vector<int> v{1,2,3,4,5};
-    // std::cout<<v[0]<<v.at(5)<<"\n"; 
-    log(v.size(), v.capacity(), v.max_size());
-    log(v.front(), v.back());
-    log(v.empty());
-    v.erase(v.begin(), v.begin() + 2);
-    logarr(v, 0, v.size() - 1);
-    std::vector<int> v1{8,1,0};
-    std::sort(v1.begin(), v1.end());
-    logarr(v1, 0, v1.size() - 1);
-    std::cout<<(v1 == std::vector<int> {0, 1, 8});
-    std::cout<<"\n";
-    std::vector<std::vector<int> > mat(5, std::vector<int> (4, -1));
-    for(auto &row : mat) {
-        for(auto &el: row) {
-            std::cout<<el<<" ";
-        }
-        std::cout<<"\n";
-    }
+    // std::string s1 = "nm" + "io"; // this will throw an error
+    std::string s1 = std::string("nm") + "io";
+    s1 = s1 + " Is OP!!";
+    s1 += " Everyone knows this !";
+    const char s2[20] = "op"; // 8 bit character
+    const char* s3 = u8"op"; // 8 bit -> UTF-8
+    const char16_t* s4 = u"op"; // 16 bit -> UTF-16
+    const char32_t* s5 = U"op"; // 32 bit -> UTF-32
+    char16_t ch1 = 'a';
+    char32_t ch2 = 'b';
+    const wchar_t* wstr = L"Amit";//bytes depend on compiler
+    std::wstring strw = L"op Singh";
+    std::cout<<(char)s5[0]<<"\n";
+    log(s1, s2, s3, s4);
+    log(sizeof(s1), sizeof(s2), sizeof(s3), sizeof(s4), sizeof(ch1), sizeof(ch2));
+    std::cout<<wstr<<"\n";
+    std::wcout<<wstr<<"\n";
+    // std::cout<<strw<<"\n";
+    std::wcout<<strw<<"\n";
+    using namespace std::string_literals;//now problem solved
+    std::string s7 = "op"s + "Singh";
+ std::string s1="dfjhb";
+s1[0]='k';
     #ifndef ONLINE_JUDGE 
       clock_t end = clock();
       std::cout<<"\n\nExecuted In: "<<double(end - begin) / CLOCKS_PER_SEC*1000<<" ms";

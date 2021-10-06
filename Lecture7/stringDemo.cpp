@@ -1,4 +1,8 @@
 #include<bits/stdc++.h>
+//#include<ext/pb_ds/assoc_container.hpp>
+//#include<ext/pb_ds/tree_policy.hpp>
+//#include <ext/pb_ds/trie_policy.hpp>
+//using namespace __gnu_pbds;
 #define ll 				long long int
 #define ld				long double
 #define mod             1000000007
@@ -26,12 +30,17 @@
 template <typename T> T gcd(T a, T b){if(a%b) return gcd(b,a%b);return b;}
 template <typename T> T lcm(T a, T b){return (a*(b/gcd(a,b)));}
 vs tokenizer(std::string str,char ch) {std::istringstream var((str)); vs v; std::string t; while(std::getline((var), t, (ch))) {v.pb(t);} return v;}
+
+
 void err(std::istream_iterator<std::string> it) {}
 template<typename T, typename... Args>
 void err(std::istream_iterator<std::string> it, T a, Args... args) {
     std::cout << *it << " = " << a << std::endl;
     err(++it, args...);
 }
+//typedef tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update> pbds;
+//typedef trie<std::string,null_type,trie_string_access_traits<>,pat_trie_tag,trie_prefix_search_node_update> pbtrie;
+
 void file_i_o()
 {
     std::ios_base::sync_with_stdio(0); 
@@ -47,25 +56,31 @@ int main(int argc, char const *argv[]) {
     clock_t begin = clock();
     file_i_o();
     // Write your code here....
-    std::vector<int> v{1,2,3,4,5};
-    // std::cout<<v[0]<<v.at(5)<<"\n"; 
-    log(v.size(), v.capacity(), v.max_size());
-    log(v.front(), v.back());
-    log(v.empty());
-    v.erase(v.begin(), v.begin() + 2);
-    logarr(v, 0, v.size() - 1);
-    std::vector<int> v1{8,1,0};
-    std::sort(v1.begin(), v1.end());
-    logarr(v1, 0, v1.size() - 1);
-    std::cout<<(v1 == std::vector<int> {0, 1, 8});
-    std::cout<<"\n";
-    std::vector<std::vector<int> > mat(5, std::vector<int> (4, -1));
-    for(auto &row : mat) {
-        for(auto &el: row) {
-            std::cout<<el<<" ";
-        }
-        std::cout<<"\n";
-    }
+    char s1[] = "Amit";
+    std::cout<<s1<<"\n";
+    char s2[7] = "Amit";
+    std::cout<<s2<<"\n";
+    log(sizeof(s1), sizeof(s2));
+    s1[0] = 's';
+    s2[0] = 's';
+    log(s1, s2);
+    const char* s3 = "Amit";
+    log(s3);
+    s3 = "pandey";
+    // s3[0] = 's';
+    char s4[10] = {'S', 'a'};
+    log(s4, sizeof(s4));
+
+    char s5[10] = {'S', 'a', '\0', };
+    log(s5);
+
+    char s6[10] = {'S', 'a', 0, 'k', 'e', 't'};
+    log(s6);
+    
+
+    std::string s7 = "no";
+    log(s7);
+
     #ifndef ONLINE_JUDGE 
       clock_t end = clock();
       std::cout<<"\n\nExecuted In: "<<double(end - begin) / CLOCKS_PER_SEC*1000<<" ms";
